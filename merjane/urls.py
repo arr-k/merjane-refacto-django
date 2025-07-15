@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from orders.my_views import process_order
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('orders/<int:order_id>/processOrder', process_order, name='process_order'),
 ]
